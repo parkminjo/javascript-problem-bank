@@ -8,6 +8,8 @@
 
 function reassignConst() {
   // TODO
+  const err = 2;
+  err = 3;
 }
 
 // export 를 수정하지 마세요.

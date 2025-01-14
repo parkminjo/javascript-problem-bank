@@ -11,8 +11,14 @@
  */
 
 // TODO: looseCompare 함수를 작성하세요.
+const looseCompare = function (a, b) {
+  return a == b ? true : false;
+};
 
 // TODO: strictCompare 함수를 작성하세요.
+const strictCompare = function (a, b) {
+  return a === b ? true : false;
+};
 
 // export 를 수정하지 마세요.
 export { looseCompare, strictCompare };
