@@ -10,6 +10,13 @@
  */
 function getUniqueElements(arr) {
   // TODO: 중복을 제거한 새 배열을 반환하세요.
+  let newArr = [];
+  arr.forEach((item) => {
+    if (!newArr.includes(item)) {
+      newArr.push(item);
+    }
+  });
+  return newArr;
 }
 
 // export를 수정하지 마세요.
