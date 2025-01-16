@@ -18,9 +18,12 @@ import { person } from "../05.객체/(lv.1)[2]메서드-만들기";
 
 function get20sEmail(arr) {
   // TODO: 배열 메서드 체이닝을 사용해 20대 사람의 email 배열을 반환하세요.
-  arr.filter((person) => {
-    person.age > 20;
-  });
+  return arr
+    .filter((person) => {
+      return person.age >= 20 && person.age < 30;
+    })
+    .sort((a, b) => a.age - b.age)
+    .map((person) => person.email);
 }
 
 // export를 수정하지 마세요.

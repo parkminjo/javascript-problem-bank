@@ -17,7 +17,22 @@
  *
  * @returns {number}
  */
-function skipAndStop() {}
+function skipAndStop() {
+  let sum = 0;
+  for (let i = 1; i <= 10; i++) {
+    if (i % 2 === 0) {
+      continue;
+    } else if (i === 9) {
+      break;
+    } else {
+      console.log(i);
+      sum += i;
+      console.log(sum);
+    }
+  }
+
+  return sum;
+}
 
 // export를 수정하지 마세요.
 export { skipAndStop };
