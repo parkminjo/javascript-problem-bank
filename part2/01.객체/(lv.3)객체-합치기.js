@@ -16,7 +16,10 @@
  * @returns {object}
  */
 
-function mergeObjects(...objs) {}
+function mergeObjects(...objs) {
+  const newObjs = new Set(objs);
+  console.log(newObjs);
+}
 
 // export를 수정하지 마세요.
 export { mergeObjects };
