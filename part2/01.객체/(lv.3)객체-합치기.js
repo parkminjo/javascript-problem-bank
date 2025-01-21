@@ -17,8 +17,8 @@
  */
 
 function mergeObjects(...objs) {
-  const newObjs = new Set(objs);
-  console.log(newObjs);
+  const newObjs = Object.assign({}, ...objs);
+  return newObjs;
 }
 
 // export를 수정하지 마세요.
