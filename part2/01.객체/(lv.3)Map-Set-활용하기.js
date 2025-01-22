@@ -16,23 +16,17 @@
 
 function createUserLogger() {
   const userLogs = new Map();
-  const userId = "abc123";
-  const action = ["login", "viewPage", "logout"];
-  userLogs.set(userId, { action });
 
   function recordUserAction(userId, action) {
-    if (userLogs.has(userId)) {
-      userLogs.set(userId, { action });
-    } else {
-      const userLogs = new Map();
-      userLogs.set(userId, { action });
+    if (!userLogs.has(userId)) {
+      userLogs.set(userId, new Set());
     }
+    userLogs.get(userId).add(action);
   }
   function getUserActions(userId) {
-    const a = userLogs.get(userId);
-    return [...a.action];
+    return userLogs.has(userId) ? Array.from(userLogs.get(userId)) : [];
   }
-  getUserActions(userId);
+  return { recordUserAction, getUserActions };
 }
 
 // export 를 수정하지 마세요.
