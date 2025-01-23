@@ -12,13 +12,13 @@
 
 // TODO: 함수를 작성하세요.
 function getFrequency(arr) {
-  let a = 0;
-  let b = 0;
-  let result = {};
+  const result = new Map();
 
   arr.forEach((item) => {
-    arr.indexOf(item);
+    result.set(item, (result.get(item) || 0) + 1);
   });
+
+  return Object.fromEntries(result);
 }
 
 // export 를 수정하지 마세요.
