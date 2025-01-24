@@ -10,7 +10,35 @@
  * @returns {{ averageAge: number, maxAge: number }}
  */
 
-function calculateStatistics(users) {}
+function calculateStatistics(users) {
+  /** 평균 나이 */
+  if (users.length === 0) {
+    return { averageAge: 0, maxAge: 0 };
+  }
+  const sumAge = users.reduce((acc, user) => {
+    const { age } = user;
+
+    if (age !== -Infinity) {
+      return acc + age;
+    } else {
+      return acc;
+    }
+  }, 0);
+  const averageAge = sumAge / users.length;
+
+  /** 최대 나이 */
+  const maxAge = users.reduce((acc, user) => {
+    const { age } = user;
+
+    if (age !== -Infinity) {
+      return acc > age ? acc : age;
+    } else {
+      return acc;
+    }
+  }, users[0].age);
+
+  return { averageAge, maxAge };
+}
 
 // export 를 수정하지 마세요.
 export { calculateStatistics };

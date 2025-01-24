@@ -17,6 +17,13 @@ let topKeywordsCache = [];
 
 function updateTopKeywords(keywords) {
   // TODO
+  const keywordCount = new Map();
+
+  keywords.forEach((keyword) => {
+    keywordCount.set(keyword, (keywordCount.get(keyword) || 0) + 1);
+  });
+
+  console.log(keywordCount);
 }
 
 function getTopKeywords() {
