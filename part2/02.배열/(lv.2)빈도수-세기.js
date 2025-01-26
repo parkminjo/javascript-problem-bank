@@ -11,6 +11,7 @@
  */
 
 // TODO: 함수를 작성하세요.
+
 function getFrequency(arr) {
   const result = new Map();
 

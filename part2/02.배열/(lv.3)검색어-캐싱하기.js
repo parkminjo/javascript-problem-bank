@@ -23,12 +23,16 @@ function updateTopKeywords(keywords) {
     keywordCount.set(keyword, (keywordCount.get(keyword) || 0) + 1);
   });
 
-  console.log(keywordCount);
+  const arr = [...keywordCount.entries()];
+  topKeywordsCache = arr
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map((item) => item[0]);
 }
 
 function getTopKeywords() {
   // TODO
-  return [];
+  return topKeywordsCache;
 }
 
 // export를 수정하지 마세요.

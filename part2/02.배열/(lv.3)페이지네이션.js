@@ -19,7 +19,41 @@ const posts = [
   { id: 5, title: "Example" },
 ];
 
-function getPage(pageNumber, perPage) {}
+function getPage(pageNumber, perPage) {
+  if (pageNumber + perPage > posts.length) {
+    return [];
+  }
+  if (pageNumber < 1 || perPage < 1) {
+    return [];
+  }
+  const startIndex = pageNumber - 1;
+  const a = posts.slice(startIndex, perPage + pageNumber - 1);
+
+  console.log("pageNumber: " + pageNumber);
+  console.log("startIndex: " + startIndex);
+  console.log(a);
+  return a;
+}
+
+// function getPage(pageNumber, perPage) {
+//   if (pageNumber < 1 || perPage < 1) {
+//     return [];
+//   }
+
+//   const startIndex = (pageNumber - 1) * perPage;
+
+//   if (startIndex >= posts.length) {
+//     return [];
+//   }
+//   const endIndex = startIndex + perPage;
+//   const a = posts.slice(startIndex, endIndex);
+
+// console.log("pageNumber: " + pageNumber);
+// console.log("startIndex: " + startIndex);
+// console.log(a);
+
+//   return posts.slice(startIndex, endIndex);
+// }
 
 // export 를 수정하지 마세요.
 export { getPage, posts };
