@@ -20,11 +20,11 @@
 // TODO: getAllFolderNames 함수를 작성하세요.
 function getAllFolderNames(folder) {
   const { name, subFolders } = folder;
+  let arr = [name];
 
-  const arr = [];
-  arr.push(name);
-  console.log(arr);
-
+  for (const subFolder of subFolders) {
+    arr = arr.concat(getAllFolderNames(subFolder));
+  }
   return arr;
 }
 
