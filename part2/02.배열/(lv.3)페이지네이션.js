@@ -30,7 +30,6 @@ function getPage(pageNumber, perPage) {
     return [];
   }
   const endIndex = startIndex + perPage;
-  const a = posts.slice(startIndex, endIndex);
 
   return posts.slice(startIndex, endIndex);
 }
